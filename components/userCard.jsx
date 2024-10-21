@@ -10,13 +10,17 @@ const UserCard = ({ user }) => {
       };
 
     return (
-        <div onClick={handleCardClick} className='w-full h-[300px] bg-red-300'>
-            <h2 className='font-bold'>{user.name}</h2>
-            <p>Username: {user.username}</p>
-            <p>Email: {user.email}</p>
-            <p>Website: {user.website}</p>
-            <p>Company: {user.company.name}</p>
+        <section className=''>
+            <div onClick={handleCardClick} className='w-full bg-blue-200 cursor-pointer hover:scale-105 transition duration-200 ease-in-out h-56 flex flex-col justify-center shadow-lg shadow-gray-500 items-center rounded-lg  '>
+            <h2 className='mb-5 font-extrabold tracking-wider'>{user.name}</h2>
+           <div className='flex flex-col justify-start items-start '>
+           <p className='mt-1'>Username: {user.username}</p>
+            <p className='text-sm mt-1 font-semibold'>{user.email}</p>
+            <p className='mt-1'>{user.website}</p>
+            <p className='mt-1'>{user.phone}</p>
+           </div>
         </div>
+        </section>
     )
 }
 

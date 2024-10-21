@@ -1,8 +1,8 @@
-"use client"; // Mark this file as a Client Component
+"use client";
 
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { getUserDetails } from '@/services/apiService'; // Make sure this path is correct
+import { getUserDetails } from '@/services/apiService';
 
 const UserDetails = () => {
   const { id } = useParams();
@@ -13,7 +13,7 @@ const UserDetails = () => {
       try {
         console.log(id);
         
-        const data = await getUserDetails(id); // Fetch user details based on ID
+        const data = await getUserDetails(id);
         setUserDetails(data);
       } catch (error) {
         console.error('Error fetching user details:', error);
@@ -21,20 +21,20 @@ const UserDetails = () => {
     };
 
     if (id) {
-      fetchUserDetails(); // Fetch details only if ID is available
+      fetchUserDetails();
     }
   }, [id]);
 
   if (!userDetails) {
-    return <p>Loading user details...</p>; // Show loading message
+    return <p>Loading user details...</p>;
   }
 
   return (
-    <div className="user-details">
-      <h1>{userDetails.name}</h1>
-      <p>Email: {userDetails.email}</p>
-      <p>Username: {userDetails.username}</p>
-      {/* Add more user details as needed */}
+    <div className="m-5 user-details">
+      <h1 className='font-extrabold text-lg '>{userDetails.name}</h1>
+      <p>{userDetails.email}</p>
+      <p>{userDetails.username}</p>
+      <p>{userDetails.address.street}, {userDetails.address.suite}, {userDetails.address.city}, {userDetails.address.zipcode}</p>
     </div>
   );
 };

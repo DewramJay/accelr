@@ -6,8 +6,9 @@ const Layout = ({ children }) => {
     <html lang="en">
       <body>
         <Header />
-        <main>{children}</main> 
-      </body>
+        <main className=' mt-20'>{children}</main> 
+      
+        </body>
     </html>
   );
 };

@@ -1,8 +1,11 @@
+import Link from 'next/link';
 
 const Header = () => {
     return (
-      <header style={{ padding: '20px', backgroundColor: '#f8f8f8' }}>
-        <h1>My Website</h1>
+      <header className="py-5 fixed top-0  w-full z-10 pl-5 bg-blue-950 text-white">
+        <Link href="/">
+          <h1  className="font-extrabold tracking-widest">User App</h1>
+        </Link>
       </header>
     );
   };
