@@ -6,7 +6,7 @@ const UserCard = ({ user }) => {
 
     const router = useRouter();
     const handleCardClick = () => {
-        router.push(`/user/${user.id}`); // Navigate to dynamic user page
+        router.push(`/user/${user.id}`);
       };
 
     return (

@@ -14,3 +14,13 @@ export const getUsers = async () => {
     }
   };
   
+
+  export const getUserDetails = async (id) => {
+    try {
+      const response = await axios.get(`https://jsonplaceholder.typicode.com/users?id=${id}`);
+      return response.data[0];
+    } catch (error) {
+      console.error('Error fetching user details:', error);
+      throw error;
+    }
+  };
