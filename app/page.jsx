@@ -1,6 +1,6 @@
+'use client'
 
-
-const page = () => {
+const page = ({ children }) => {
   return (
     <div>page</div>
   )
